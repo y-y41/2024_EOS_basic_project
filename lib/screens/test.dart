@@ -9,6 +9,7 @@ class Test extends StatefulWidget {
 
 class _TestState extends State<Test> {
   List toDoLists = [];
+  int _counter = 3;
 
   @override
   void initState() {
@@ -52,11 +53,16 @@ class _TestState extends State<Test> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            '최윤영(본인 이름)',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20),
-                          ),
+                          if (_counter > 2)
+                            Text(
+                              '최윤영(본인 이름)',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: _counter > 2
+                                      ? Colors.blue
+                                      : Colors.black),
+                            ),
                           SizedBox(
                             height: 15,
                           ),
